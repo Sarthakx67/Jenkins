@@ -9,7 +9,7 @@ pipeline{
         }
         stage('print-hello-world..') {
             steps{
-                echo 'hello-world!!!'
+                sh 'echo "hello-world!!! > /home/ec2-user/hello.txt"'
             }
         }
         stage('bye..') {
