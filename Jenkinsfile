@@ -10,11 +10,7 @@ pipeline{
         stage('Create-file..') {
             steps{
                 sh "echo 'hello-world!!!' > /home/ec2-user/hello/hello.txt"
-            }
-        }
-        stage('print-hello-world..') {
-            steps{
-                sh 'echo "hello-world!!! > /home/ec2-user/hello/hello.txt"'
+                error 'this is failed'
             }
         }
         stage('bye..') {
