@@ -4,8 +4,10 @@ pipeline{
     stages{
         stage('Create-Directory..') {
             steps{
-                sh 'sudo su -'
-                sh 'mkdir -p /home/ec2-user/hello'
+                sh '''
+                sudo su -
+                mkdir -p /home/ec2-user/hello
+                '''
             }
         }
         stage('Create-file..') {
