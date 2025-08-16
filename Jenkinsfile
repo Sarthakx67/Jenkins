@@ -2,11 +2,6 @@ pipeline{
     agent any
 
     stages{
-        stage('mkdir..') {
-            steps{
-                sh 'mkdir -p /home/ec2-user/hello'
-            }
-        }
         stage('running multiple commands..') {
             steps{
                 sh '''
