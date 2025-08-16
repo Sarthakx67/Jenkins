@@ -5,8 +5,7 @@ pipeline{
         stage('Create-Directory..') {
             steps{
                 sh '''
-                sudo su -
-                mkdir -p /home/ec2-user/hello
+                sudo mkdir -p /home/ec2-user/hello
                 '''
             }
         }
