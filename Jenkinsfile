@@ -13,6 +13,15 @@ pipeline{
                 error 'this is failed'
             }
         }
+        stage('running multiple commands..') {
+            steps{
+                sh '''
+                ls -ltr
+                pwd
+                echo "hello scripts"
+                '''
+            }
+        }
         stage('bye..') {
             steps{
                 echo 'byeeeee.....'
@@ -27,7 +36,7 @@ pipeline{
             echo 'this block will run when job is success'
         }
         failure {
-            echo 'this block will always run when job unsuccessful'
+            echo 'this block will always run when job is unsuccessful'
         }
     }
 }
