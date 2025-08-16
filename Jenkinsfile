@@ -2,13 +2,6 @@ pipeline{
     agent any
 
     stages{
-        stage('Create-Directory..') {
-            steps{
-                sh '''
-                sudo mkdir -p /home/ec2-user/hello
-                '''
-            }
-        }
         stage('Create-file..') {
             steps{
                 sh "echo 'hello-world!!!' > /home/ec2-user/hello/hello.txt"
