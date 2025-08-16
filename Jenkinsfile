@@ -2,11 +2,6 @@ pipeline{
     agent any
 
     stages{
-        stage('Create-file..') {
-            steps{
-                sh "echo 'hello-world!!!' > /home/ec2-user/hello.txt"
-            }
-        }
         stage('running multiple commands..') {
             steps{
                 sh '''
