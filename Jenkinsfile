@@ -5,7 +5,7 @@ pipeline{
         stage('downloading git repo...') {
             steps{
                 sh '''
-                cd /
+                ls -ltr
                 git clone https://github.com/Sarthakx67/RoboShop-Infra-Standard.git
                 '''
             }
