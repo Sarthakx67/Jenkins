@@ -5,7 +5,7 @@ pipeline{
         stage('downloading git repo...') {
             steps{
                 sh '''
-                ls -ltr
+                ls -l
                 git clone https://github.com/Sarthakx67/RoboShop-Infra-Standard.git
                 '''
             }
@@ -13,7 +13,7 @@ pipeline{
         stage('terraform init') {
             steps{
                 sh '''
-                    ls -ltr
+                    ls -l
                     cd /RoboShop-Infra-Standard/01-vpc
                     terraform init
                 '''
