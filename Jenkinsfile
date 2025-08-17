@@ -6,6 +6,7 @@ pipeline{
             steps{
                 sh '''
                 ls -l
+                cd /home/ec2-user
                 git clone https://github.com/Sarthakx67/RoboShop-Infra-Standard.git
                 '''
             }
@@ -14,7 +15,7 @@ pipeline{
             steps{
                 sh '''
                     ls -l
-                    cd /RoboShop-Infra-Standard/01-vpc
+                    cd /home/ec2-user/RoboShop-Infra-Standard/01-vpc
                     terraform init
                 '''
             }
