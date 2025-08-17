@@ -1,19 +1,22 @@
 pipeline{
-    agent any
+    agent { label 'agent-1' }
 
     stages{
-        stage('running multiple commands..') {
+        stage('downloading git repo...') {
             steps{
                 sh '''
-                ls -ltr
-                pwd
-                echo "hello scripts"
+                cd /
+                git clone https://github.com/Sarthakx67/RoboShop-Infra-Standard.git
                 '''
             }
         }
-        stage('bye..') {
+        stage('terraform init') {
             steps{
-                echo 'byeeeee.....'
+                sh '''
+                    ls -ltr
+                    cd /RoboShop-Infra-Standard/01-vpc
+                    terraform init
+                '''
             }
         }
     }
