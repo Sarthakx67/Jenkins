@@ -16,6 +16,7 @@ pipeline{
                 sh '''
                     ls -l
                     cd /home/ec2-user/RoboShop-Infra-Standard/01-vpc
+                    git pull
                     terraform init
                 '''
             }
