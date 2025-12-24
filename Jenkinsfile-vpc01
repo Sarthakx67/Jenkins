@@ -1,0 +1,45 @@
+pipeline{
+    agent { label 'agent-1' }
+
+    stages{
+        stage('downloading git repo...') {
+            steps{
+                sh '''
+                ls -l
+                cd /home/ec2-user
+                git clone https://github.com/Sarthakx67/RoboShop-Infra-Standard.git
+                '''
+            }
+        }
+        stage('terraform init') {
+            steps{
+                sh '''
+                    ls -l
+                    cd /home/ec2-user/RoboShop-Infra-Standard/01-vpc
+                    git pull
+                    terraform init
+                '''
+            }
+        }
+        stage('terraform init') {
+            steps{
+                sh '''
+                    cd /home/ec2-user/RoboShop-Infra-Standard/01-vpc
+                    git pull
+                    terraform apply
+                '''
+            }
+        }
+    }
+    post{
+        always {
+            echo 'this block will always run wheather job is success or not'
+        }
+        success {
+            echo 'this block will run when job is success'
+        }
+        failure {
+            echo 'this block will always run when job is unsuccessful'
+        }
+    }
+}
